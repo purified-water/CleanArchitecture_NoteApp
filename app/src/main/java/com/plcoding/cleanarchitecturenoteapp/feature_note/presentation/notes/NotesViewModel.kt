@@ -1,4 +1,4 @@
-package com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.notes.components
+package com.plcoding.cleanarchitecturenoteapp.feature_note.presentation.notes
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -49,7 +49,7 @@ class NotesViewModel @Inject constructor(
                     recentlyDeletedNote = event.note
                 }
             }
-            is NotesEvent.RestoreNote-> {
+            is NotesEvent.RestoreNote -> {
                 viewModelScope.launch {
                     //Check if the recentdel is null or not
                     noteUseCases.addNote(recentlyDeletedNote ?: return@launch)
