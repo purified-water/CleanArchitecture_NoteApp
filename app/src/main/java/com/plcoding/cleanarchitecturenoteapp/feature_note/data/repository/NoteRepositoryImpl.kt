@@ -9,6 +9,7 @@ class NoteRepositoryImpl(
     private val dao: NoteDao
 
 ): NoteRepository {
+
     override fun getNotes(): Flow<List<Note>> {
         //No data logic yet
         return dao.getNotes()
